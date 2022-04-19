@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:streak/pages/onBoarding.dart';
 import './pages/SplashScreen.dart';
 
 void main() {
@@ -15,7 +16,7 @@ class _MainState extends State<Streak> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Splashscreen(),
+      home: Onboarding(),
     );
   }
 }
