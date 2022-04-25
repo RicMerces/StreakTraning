@@ -6,6 +6,20 @@ class Scorecont extends StatefulWidget {
 }
 
 class _ScorecontState extends State<Scorecont> {
+  int _contagem = 0;
+
+  void addDays() {
+    setState(() {
+      _contagem++;
+    });
+  }
+
+  void reset() {
+    setState(() {
+      _contagem = 0;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,10 +32,10 @@ class _ScorecontState extends State<Scorecont> {
               'assets/img/logoStreak.png',
               height: 200,
             ),
-            const Padding(
+            Padding(
               padding: EdgeInsets.all(30),
               child: Text(
-                '10 DAYS',
+                "$_contagem Days",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 64,
@@ -35,9 +49,7 @@ class _ScorecontState extends State<Scorecont> {
                 Padding(
                   padding: EdgeInsets.only(top: 10),
                   child: ElevatedButton(
-                    onPressed: () {
-                      print('Ola Mundo');
-                    },
+                    onPressed: () => addDays(),
                     child: Ink(
                       decoration: BoxDecoration(
                           gradient: const LinearGradient(
@@ -67,9 +79,7 @@ class _ScorecontState extends State<Scorecont> {
                 Padding(
                   padding: EdgeInsets.only(top: 20),
                   child: ElevatedButton(
-                    onPressed: () {
-                      print('Ola Mundo');
-                    },
+                    onPressed: () => reset(),
                     child: Ink(
                       decoration: BoxDecoration(
                           gradient: const LinearGradient(
