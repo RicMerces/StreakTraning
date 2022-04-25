@@ -17,7 +17,7 @@ class _MainState extends State<Streak> {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scorecont(),
+      home: Splashscreen(),
     );
   }
 }

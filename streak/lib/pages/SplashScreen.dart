@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:streak/pages/onBoarding.dart';
+import 'dart:async';
 
 class Splashscreen extends StatefulWidget {
   @override
@@ -6,6 +8,18 @@ class Splashscreen extends StatefulWidget {
 }
 
 class _SplashscreenState extends State<Splashscreen> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 4), () {
+      Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => Onboarding(),
+          ));
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

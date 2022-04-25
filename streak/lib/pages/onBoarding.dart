@@ -1,7 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:streak/pages/scorecont.dart';
 
-class Onboarding extends StatelessWidget {
+class Onboarding extends StatefulWidget {
   const Onboarding({Key? key}) : super(key: key);
+
+  @override
+  _OnboardingState createState() => _OnboardingState();
+}
+
+class _OnboardingState extends State<Onboarding> {
+  void abrirScore() {
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+          builder: (context) => Scorecont(),
+        ));
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -41,9 +55,7 @@ class Onboarding extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(top: 40),
               child: ElevatedButton(
-                onPressed: () {
-                  print('Ola Mundo');
-                },
+                onPressed: () => abrirScore(),
                 child: Ink(
                   decoration: BoxDecoration(
                       gradient: const LinearGradient(
